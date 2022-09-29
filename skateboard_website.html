@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    table, th, td {border:1px solid black;}
-    p,ul,ol,h1,h2,h3,h4,Table {margin: 20px; font-size: 120%}
-  </style>
   <head>
     <meta charset="utf-8"/>
     <title>Skateboard Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      table, th, td {border:1px solid black;}
+      p,ul,ol,h1,h2,h3,h4,Table {margin: 20px; font-size: 120%}
+    </style>
   </head>
-  <body style="background-color:tan;">
+
+  <body style="background-color:tan;" id="navbar">
+    <div class="navbar-expand bg-light">
+      <ul class="navbar-nav">
+        <li class="nav-item ms-5 me-4 navbar-text"><a href="file:///Users/maxpayne/Documents/CS/HTML/link1.html">Cool Images</a></li>
+        <li class="nav-item me-5 ms-4 navbar-text"><a href="file:///Users/maxpayne/Documents/CS/HTML/link2.html">Famous Skaters</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="file:///Users/maxpayne/Documents/CS/HTML/link1.html">Cool Images</a></li>
+              <li><a class="dropdown-item" href="file:///Users/maxpayne/Documents/CS/HTML/link2.html">Famous Skaters</a></li>
+        </li>
+      </ul>
+    </div>
+
     <div id="title">
-      <h1 style="text-align:center"><pre>Skateboard   ★   Website</h1>
+      <h1 class="display-1 text-center text-success"><pre>Skateboard   ★   Website</h1>
       <hr>
     </div>
-    <div class="container">
-      <h2 style="color:red;">Learn to Skate!</h2>
+
+    <div class="offcanvas offcanvas-start" id="demo">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Heading</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="file:///Users/maxpayne/Documents/CS/HTML/link1.html">Cool Images</a>
+        <a href="file:///Users/maxpayne/Documents/CS/HTML/link2.html">Famous Skaters</a>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-3">
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">Open Sidebar</button>
+    </div>
+
+    <div class="container" id="main info">
       <div id="starting_out">
+        <h2 style="color:red;">Learn to Skate!</h2>
+        <p>Enter you skill level:</p>
+        <input type="range" class="form-range sm" id="skill range">
         <p>starting out:</p>
         <ul>
           <li>  put one foot on the front of the board and push off with the back foot</li>
@@ -28,6 +60,17 @@
         </ul>
         <br>
       </div>
+
+      <div class="toast show" id="toast">
+        <div class="toast-header">
+          <strong class="me-auto">Done with those?</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body">
+          <p>Try something harder:</p>
+        </div>
+      </div>
+
       <div id="tricks">
         <p>Here's some tricks to try:</P>
         <ol>
@@ -37,15 +80,18 @@
           <li>  kickflip</li>
           <li>  heelflip</li>
         </ol>
+        <hr>
       </div>
-    </div>
-    <hr>
-    <div class="container">
-      <h3 style="color:blue;">Boards</h2>
+
       <div id="boards">
+        <h3 style="color:blue;">Boards</h2>
         <p>here's some options:</p>
-        <h4> <del>Zumiez</del><a href="https://nhsskatedirect.com/pages/creature-skateboards?gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITXmYsDxNiUMWBd1w7NS0eU9fs67HP1ptLhBCjRh-e85r28YN9-_crsaAub-EALw_wcB">Creature Skateboards</a></p>
+        <div class="btn-group">
+          <a href="https://nhsskatedirect.com/pages/creature-skateboards?gclid=Cj0KCQjw9ZGYBhCEARIsAEUXITXmYsDxNiUMWBd1w7NS0eU9fs67HP1ptLhBCjRh-e85r28YN9-_crsaAub-EALw_wcB"><button type="button" class="btn btn-primary btn-md">Creature Skateboards</button></a>
+          <a href="https://blindskateboards.com/"><button type="button" class="btn btn-primary btn-md">Blind Skateboards</button></a>
+        </div>
       </div>
+
       <div id="products">
         <p>Different companies make different products:</p>
         <Table "text-align:center">
@@ -68,11 +114,12 @@
         </Table>
       </div>
     </div>
-    <div id="links">
-      <p style="text-align:right"><a href="file:///Users/maxpayne/Documents/CS/HTML/link1.html">Cool Images</a></p>
-      <p style="text-align:right"><a href="file:///Users/maxpayne/Documents/CS/HTML/link2.html">Famous Skaters</a></p>
-    <div id="image">
-      <img src="https://i.gifer.com/fxc0.gif" alt="image error" style="float:right; width="300"; height="200">
+
+    <div class="row bg-secondary; position-absolute bottom-30 end-0 bg-dark".bg-primary id="links + image">
+      <div class="col-lg-3 p-3 col-md-6"><a href="file:///Users/maxpayne/Documents/CS/HTML/link1.html">Cool Images</a></div>
+      <div class="col-lg-4 p-3 col-md-6"><a href="file:///Users/maxpayne/Documents/CS/HTML/link2.html">Famous Skaters</a></div>
+      <div class="col-lg-5 p-3 col-md-12 img-fluid"><img src="https://i.gifer.com/fxc0.gif" alt="image error"></div>
     </div>
+
   </body>
 </html>
