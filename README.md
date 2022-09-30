@@ -1,5 +1,13 @@
 # HTML
 
-These are my extra items
-1. I finished my code
-2. I have this new file
+Bootstrap notes:
+  5 flexible elements:
+  - input
+  - button groups / button
+  - table
+  - dropdown
+  - container
+  - Images
+  2 more open elements:
+  - toast
+  - offcanvas sidebar
